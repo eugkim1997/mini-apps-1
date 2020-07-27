@@ -9,16 +9,20 @@ View
   <link rel="stylesheet" href="assets/stylesheets/main.css">
 </head>
 <body>
+  <h1>Tic Tac Toe</h1>
+  <h2>Score</h2>
+  <div class="score">Player 'O':</div>
+  <div class="score">Player 'X':</div>
   <div class="board">
-    <button class = "box" id="one" onclick="changeContent(0,0, move);"></button>
-    <button class = "box" id="two" onclick="changeContent(0,1, move);"></button>
-    <button class = "box" id="three" onclick="changeContent(0,2, move);"></button>
-    <button class = "box" id="four" onclick="changeContent(1,0, move);"></button>
-    <button class = "box" id="five" onclick="changeContent(1,1, move);"></button>
-    <button class = "box" id="six" onclick="changeContent(1,2, move);"></button>
-    <button class = "box" id="seven" onclick="changeContent(2,0, move);"></button>
-    <button class = "box" id="eight" onclick="changeContent(2,1, move);"></button>
-    <button class = "box" id="nine" onclick="changeContent(2,2, move);"></button>
+    <button class = "box" id="one" onclick="changeContent(0,0, turn);"></button>
+    <button class = "box" id="two" onclick="changeContent(0,1, turn);"></button>
+    <button class = "box" id="three" onclick="changeContent(0,2, turn);"></button>
+    <button class = "box" id="four" onclick="changeContent(1,0, turn);"></button>
+    <button class = "box" id="five" onclick="changeContent(1,1, turn);"></button>
+    <button class = "box" id="six" onclick="changeContent(1,2, turn);"></button>
+    <button class = "box" id="seven" onclick="changeContent(2,0, turn);"></button>
+    <button class = "box" id="eight" onclick="changeContent(2,1, turn);"></button>
+    <button class = "box" id="nine" onclick="changeContent(2,2, turn);"></button>
   </div>
   <script src="app.js"></script>
 </body>

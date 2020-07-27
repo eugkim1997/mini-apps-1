@@ -1,23 +1,28 @@
+
 /*
 Model
--Tic Tac Toe Board Data structure: 3 x 3 matrix/nested array
+-tictactoe Board Data structure: 3 x 3 matrix/nested array
 */
-var board = [['#', '#', '#'],
-             ['#', '#', '#'],
-             ['#', '#', '#']];
-var count = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
-var move = 'O';
 
-var displayBoard = function() {
+//current contents of tictactoe board
+var blueprints = [['#', '#', '#'],
+                  ['#', '#', '#'],
+                  ['#', '#', '#']];
+var count = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+var turn = 'X';
+
+//maintains elements(buttons) displayed on html board, reflects blueprints
+var updateBoard = function() {
   var countIndex = 0;
-  for (var i = 0; i < board.length; i++) {
-    for (var j = 0; j < board[i].length; j++) {
-      document.getElementById(count[countIndex]).innerHTML = board[i][j];
+  for (var i = 0; i < blueprints.length; i++) {
+    for (var j = 0; j < blueprints[i].length; j++) {
+      document.getElementById(count[countIndex]).innerHTML = blueprints[i][j];
       countIndex++;
     }
   }
-}
-displayBoard();
+};
+//starts app
+updateBoard();
 
 /*
 Controller
@@ -26,6 +31,15 @@ Controller
 
 //
 var changeContent = function(i, j, content) {
-  board[i][j] = content;
-  displayBoard();
-}
+  blueprints[i][j] = content;
+  updateBoard();
+  switchTurn();
+};
+
+var switchTurn = function() {
+  if (turn === 'X') {
+    turn = 'O';
+  } else {
+    turn = 'X';
+  }
+};
