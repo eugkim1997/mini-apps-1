@@ -6,7 +6,9 @@
 }
 
 .box {
-  background-color:blue;
+  background-color:#576e8f;
+  color: white;
+  font-size: 30px;
 }
 
 #one {
