@@ -4,11 +4,25 @@ Model
 -tictactoe Board Data structure: 3 x 3 matrix/nested array
 */
 
+//starts app
+var app = function() {
+  while (Oscore <= 3 && Xscore <= 3) {
+    updateBoard();
+  }
+}
+// updateBoard();
+//app();
+
 //current contents of tictactoe board
+var startingBlueprint = [['1', '2', '3'],
+                  ['4', '5', '6'],
+                  ['7', '8', '9']];
 var blueprint = [['1', '2', '3'],
                   ['4', '5', '6'],
                   ['7', '8', '9']];
 var count = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+var Oscore = 0;
+var Xscore = 0;
 var turn = 'X';
 
 //maintains elements(buttons) displayed on html board, reflects blueprint
@@ -35,7 +49,15 @@ var winnerCheck = function() {
     result = diagonalChecks();
   }
   if (result !== 'tie') {
-    console.log('Winner: ', result);
+    if (result === 'X') {
+      Xscore++;
+    } else {
+      Oscore++;
+    }
+    console.log(Oscore, Xscore);
+    blueprint = startingBlueprint.slice();
+    console.log(blueprint);
+    updateBoard();
   }
 };
 
@@ -76,9 +98,6 @@ var diagonalChecks = function(result) {
   return result;
 };
 
-//starts app
-updateBoard();
-
 /*
 Controller
 -Methods that update the matrix and check for a winner
@@ -99,3 +118,5 @@ var switchTurn = function() {
     turn = 'X';
   }
 };
+
+updateBoard();
